@@ -9,6 +9,34 @@ content:
     path: src/index.md
     fields:
       - { name: title, label: "Seitentitel (Browser-Tab)", type: string }
+      - name: theme
+        label: Design
+        type: object
+        fields:
+          - name: preset
+            label: Farbschema
+            type: select
+            options:
+              values:
+                - { name: waldgruen, label: "🌲 Waldgrün (Standard)" }
+                - { name: ozeanblau, label: "🌊 Ozeanblau" }
+                - { name: terrakotta, label: "🧡 Terrakotta" }
+                - { name: lavendel, label: "💜 Lavendel" }
+          - name: wordmark_style
+            label: Logo-Schriftstil
+            type: select
+            options:
+              values:
+                - { name: serif, label: "Klassisch (Serif)" }
+                - { name: sans, label: "Modern (serifenlos)" }
+          - name: size
+            label: Textgröße
+            type: select
+            options:
+              values:
+                - { name: standard, label: Standard }
+                - { name: kompakt, label: Kompakt }
+                - { name: gross, label: Groß }
       - { name: brand, label: Firmenname, type: string }
       - { name: tagline, label: Slogan, type: string }
       - { name: subtitle, label: Untertitel, type: string }

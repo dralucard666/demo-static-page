@@ -36,6 +36,20 @@ a {
   font-family: "Playfair Display", Georgia, serif;
 }
 
+.wordmark.sans {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+html.size-kompakt {
+  font-size: 15px;
+}
+
+html.size-gross {
+  font-size: 18px;
+}
+
 /* Header */
 
 .site-header {

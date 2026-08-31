@@ -1,5 +1,9 @@
 ---
 title: wir aendern hier was
+theme:
+  preset: waldgruen
+  wordmark_style: serif
+  size: standard
 brand: Herz & Hilfe
 tagline: Ihre helfende Hand im Alltag
 subtitle: Entlastung & Alltagsbegleitung
