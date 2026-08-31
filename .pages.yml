@@ -1,0 +1,59 @@
+media:
+  input: src/images
+  output: /demo-static-page/images
+
+content:
+  - name: home
+    label: Home Page
+    type: file
+    path: src/index.md
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: sections
+        label: Sections
+        type: block
+        list: true
+        blockKey: type
+        blocks: &page-blocks
+          - name: hero
+            label: Hero
+            fields:
+              - { name: heading, label: Heading, type: string }
+              - { name: subtitle, label: Subtitle, type: string, required: false }
+          - name: text
+            label: Text
+            fields:
+              - { name: body, label: Body, type: rich-text }
+          - name: image
+            label: Image
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text, type: string }
+              - { name: caption, label: Caption, type: string, required: false }
+          - name: quote
+            label: Quote
+            fields:
+              - { name: text, label: Quote text, type: string }
+              - { name: author, label: Author, type: string, required: false }
+          - name: button
+            label: Button
+            fields:
+              - { name: label, label: Button label, type: string }
+              - { name: url, label: Link URL, type: string }
+
+  - name: about
+    label: About Page
+    type: file
+    path: src/about.md
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: sections
+        label: Sections
+        type: block
+        list: true
+        blockKey: type
+        blocks: *page-blocks

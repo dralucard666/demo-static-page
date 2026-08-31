@@ -29,13 +29,30 @@
 
   <main>
     <div class="card">
-      <div class="page-head">
-        <h1>{{ title }}</h1>
-        {% if subtitle %}<p class="subtitle">{{ subtitle }}</p>{% endif %}
-      </div>
-      <div class="prose">
-        {{ content | safe }}
-      </div>
+      {% for section in sections %}
+        {% if section.type == "hero" %}
+          <div class="block block-hero">
+            <h1>{{ section.heading }}</h1>
+            {% if section.subtitle %}<p class="subtitle">{{ section.subtitle }}</p>{% endif %}
+          </div>
+        {% elif section.type == "text" %}
+          <div class="block block-text prose">{{ section.body | safe }}</div>
+        {% elif section.type == "image" %}
+          <figure class="block block-image">
+            <img src="{{ section.src }}" alt="{{ section.alt }}" />
+            {% if section.caption %}<figcaption>{{ section.caption }}</figcaption>{% endif %}
+          </figure>
+        {% elif section.type == "quote" %}
+          <blockquote class="block block-quote">
+            <p>{{ section.text }}</p>
+            {% if section.author %}<cite>{{ section.author }}</cite>{% endif %}
+          </blockquote>
+        {% elif section.type == "button" %}
+          <div class="block block-button">
+            <a class="btn" href="{{ section.url }}">{{ section.label }}</a>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </main>
 
