@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <a href="/" class="brand">My Website</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>{{ title }}</h1>
+    {% if subtitle %}<p class="subtitle">{{ subtitle }}</p>{% endif %}
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; {% year %} My Website</p>
+  </footer>
+</body>
+</html>
