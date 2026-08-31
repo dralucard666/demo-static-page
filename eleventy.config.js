@@ -8,6 +8,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("markdownInline", (content) =>
     markdownIt.renderInline(content || "")
   );
+  eleventyConfig.addFilter("markdown", (content) =>
+    markdownIt.render(content || "")
+  );
 
   return {
     dir: {

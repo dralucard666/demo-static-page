@@ -40,7 +40,24 @@ content:
       - { name: brand, label: Firmenname, type: string }
       - { name: tagline, label: Slogan, type: string }
       - { name: subtitle, label: Untertitel, type: string }
-      - { name: intro, label: Einleitungstext, type: text }
+      - { name: intro, label: Einleitungstext, type: rich-text }
+      - name: content_blocks
+        label: "Weitere Inhaltsabschnitte (frei gestaltbar)"
+        type: block
+        list: true
+        blockKey: type
+        blocks:
+          - name: text
+            label: Textabschnitt
+            fields:
+              - { name: heading, label: Überschrift, type: string, required: false }
+              - { name: body, label: Text, type: rich-text }
+          - name: image
+            label: Bild
+            fields:
+              - { name: src, label: Bild, type: image }
+              - { name: alt, label: Alt-Text, type: string }
+              - { name: caption, label: Bildunterschrift, type: string, required: false }
       - name: service_categories
         label: Leistungskategorien
         type: object

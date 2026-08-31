@@ -46,8 +46,26 @@
 
   <main>
     <section class="intro prose">
-      <p>{{ intro }}</p>
+      {{ intro | markdown | safe }}
     </section>
+
+    {% if content_blocks and content_blocks.length %}
+    <section class="content-blocks">
+      {% for block in content_blocks %}
+        {% if block.type == "text" %}
+          <div class="block block-text prose">
+            {% if block.heading %}<h2>{{ block.heading }}</h2>{% endif %}
+            {{ block.body | markdown | safe }}
+          </div>
+        {% elif block.type == "image" %}
+          <figure class="block block-image">
+            <img src="{{ block.src }}" alt="{{ block.alt }}" loading="lazy" />
+            {% if block.caption %}<figcaption>{{ block.caption }}</figcaption>{% endif %}
+          </figure>
+        {% endif %}
+      {% endfor %}
+    </section>
+    {% endif %}
 
     <section class="services" id="leistungen">
       <div class="services-grid">

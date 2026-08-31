@@ -11,6 +11,7 @@ intro: Ein selbstbestimmtes Leben in der eigenen Wohnung ist kostbar. Wir
   unterstützen Sie zuverlässig und tatkräftig im Haushalt, im Garten oder bei
   täglichen Wegen, damit Sie mehr Lebensqualität und Ihre Angehörigen Entlastung
   erhalten.
+content_blocks: []
 service_categories:
   - icon: 🏠
     category_title: Haushalt & Besorgungen
