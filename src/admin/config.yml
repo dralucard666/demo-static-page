@@ -2,7 +2,7 @@ backend:
   name: github
   repo: dralucard666/demo-static-page
   branch: main
-  base_url: https://PLACEHOLDER.workers.dev
+  base_url: https://decap-proxy.jonasbrossmann80.workers.dev
   auth_endpoint: /auth
 
 media_folder: "src/images"
