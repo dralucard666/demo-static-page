@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: dralucard666/my-website
+  repo: dralucard666/demo-static-page
   branch: main
   base_url: https://PLACEHOLDER.workers.dev
   auth_endpoint: /auth
