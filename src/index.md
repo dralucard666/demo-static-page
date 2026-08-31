@@ -1,6 +1,6 @@
 ---
 title: Herz & Hilfe
-brand: Herz & Hilfedfdf
+brand: Herz & Hilfe
 tagline: Ihre helfende Hand im Alltag
 subtitle: Entlastung & Alltagsbegleitung
 intro: Ein selbstbestimmtes Leben in der eigenen Wohnung ist kostbar. Wir
