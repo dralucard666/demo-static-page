@@ -10,5 +10,6 @@ module.exports = function (eleventyConfig) {
       output: "_site",
       includes: "_includes",
     },
+    pathPrefix: "/demo-static-page/",
   };
 };
