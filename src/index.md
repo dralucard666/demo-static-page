@@ -1,5 +1,5 @@
 ---
-title: wir aendern hier was
+title: Herz & Hilfe
 theme:
   preset: waldgruen
   wordmark_style: serif
