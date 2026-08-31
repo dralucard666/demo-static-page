@@ -6,10 +6,16 @@
   <title>{{ title }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
+  <div class="bg-decor" aria-hidden="true">
+    <span class="blob blob-a"></span>
+    <span class="blob blob-b"></span>
+    <span class="blob blob-c"></span>
+  </div>
+
   <header class="site-header">
     <nav>
       <a href="/" class="brand">My Website</a>
@@ -21,12 +27,14 @@
   </header>
 
   <main>
-    <div class="page-head">
-      <h1>{{ title }}</h1>
-      {% if subtitle %}<p class="subtitle">{{ subtitle }}</p>{% endif %}
-    </div>
-    <div class="prose">
-      {{ content | safe }}
+    <div class="card">
+      <div class="page-head">
+        <h1>{{ title }}</h1>
+        {% if subtitle %}<p class="subtitle">{{ subtitle }}</p>{% endif %}
+      </div>
+      <div class="prose">
+        {{ content | safe }}
+      </div>
     </div>
   </main>
 

@@ -1,11 +1,12 @@
 :root {
-  --text: #1a1a2e;
-  --muted: #6b7280;
-  --bg: #ffffff;
-  --bg-soft: #f8f9fc;
-  --accent: #4f46e5;
-  --accent-soft: #eef2ff;
-  --border: #e9eaf0;
+  --text: #f1f2f8;
+  --muted: #a7abc3;
+  --bg: #0b0c14;
+  --card-bg: rgba(255, 255, 255, 0.045);
+  --card-border: rgba(255, 255, 255, 0.09);
+  --accent-a: #818cf8;
+  --accent-b: #22d3ee;
+  --accent-c: #f472b6;
 }
 
 * {
@@ -18,28 +19,90 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bg-decor {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+  animation: drift 22s ease-in-out infinite alternate;
+}
+
+.blob-a {
+  width: 520px;
+  height: 520px;
+  top: -160px;
+  left: -140px;
+  background: radial-gradient(circle at 30% 30%, var(--accent-a), transparent 70%);
+}
+
+.blob-b {
+  width: 480px;
+  height: 480px;
+  top: 20%;
+  right: -180px;
+  background: radial-gradient(circle at 70% 30%, var(--accent-b), transparent 70%);
+  animation-duration: 26s;
+  animation-delay: -6s;
+}
+
+.blob-c {
+  width: 420px;
+  height: 420px;
+  bottom: -180px;
+  left: 20%;
+  background: radial-gradient(circle at 50% 50%, var(--accent-c), transparent 70%);
+  animation-duration: 30s;
+  animation-delay: -12s;
+}
+
+@keyframes drift {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(40px, 50px) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+  }
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-b);
 }
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: saturate(180%) blur(8px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(11, 12, 20, 0.65);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--card-border);
 }
 
 .site-header nav {
-  max-width: 760px;
+  max-width: 780px;
   margin: 0 auto;
   padding: 1.1rem 1.5rem;
   display: flex;
@@ -48,11 +111,14 @@ a {
 }
 
 .site-header .brand {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.05rem;
   letter-spacing: -0.01em;
   text-decoration: none;
-  color: var(--text);
+  background: linear-gradient(120deg, var(--accent-a), var(--accent-b));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .nav-links a {
@@ -65,25 +131,38 @@ a {
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+  color: var(--text);
 }
 
 main {
-  max-width: 760px;
+  max-width: 780px;
   margin: 0 auto;
   padding: 4rem 1.5rem 3rem;
 }
 
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 3rem 2.75rem;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
 .page-head h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.75rem;
+  font-weight: 800;
   letter-spacing: -0.02em;
   margin: 0 0 0.5rem;
+  background: linear-gradient(120deg, var(--text) 30%, var(--accent-a));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .subtitle {
   color: var(--muted);
-  margin: 0 0 2.5rem;
+  margin: 0 0 2.25rem;
   font-size: 1.2rem;
 }
 
@@ -96,29 +175,31 @@ main {
 }
 
 .prose a {
-  text-decoration-color: var(--accent-soft);
-  text-underline-offset: 2px;
+  text-decoration-color: var(--accent-a);
+  text-underline-offset: 3px;
 }
 
 .prose strong {
   font-weight: 600;
+  color: #fff;
 }
 
 .prose code {
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-border);
   border-radius: 4px;
   padding: 0.15em 0.4em;
   font-size: 0.9em;
+  color: var(--accent-b);
 }
 
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--card-border);
   margin-top: 2rem;
 }
 
 .site-footer p {
-  max-width: 760px;
+  max-width: 780px;
   margin: 0 auto;
   padding: 1.75rem 1.5rem;
   color: var(--muted);
@@ -127,9 +208,12 @@ main {
 
 @media (max-width: 480px) {
   .page-head h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
   main {
-    padding: 2.5rem 1.25rem 2rem;
+    padding: 2.5rem 1rem 2rem;
+  }
+  .card {
+    padding: 2rem 1.5rem;
   }
 }
