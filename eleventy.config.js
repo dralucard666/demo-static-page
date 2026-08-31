@@ -1,7 +1,13 @@
+const markdownIt = require("markdown-it")();
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+  eleventyConfig.addGlobalData("layout", "base.njk");
+  eleventyConfig.addFilter("markdownInline", (content) =>
+    markdownIt.renderInline(content || "")
+  );
 
   return {
     dir: {

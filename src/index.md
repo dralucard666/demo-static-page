@@ -38,9 +38,7 @@ service_categories:
       - Vertrauensvolle Bezugsperson
 billing_box:
   box_title: Abrechnung über die Pflegekasse (§ 45b SGB XI)
-  body: "**Ab Pflegegrad 1** steht Ihnen monatlich der Entlastungsbetrag von
-    **131,00 €** zu. Dieser Betrag kann direkt oder per Rückerstattung mit der
-    Pflegekasse verrechnet werden."
+  body: "**Ab Pflegegrad 1** steht Ihnen monatlich der Entlastungsbetrag von **131,00 €** zu. Dieser Betrag kann direkt oder per Rückerstattung mit der Pflegekasse verrechnet werden."
   note: "Hinweis: Aus rechtlichen Gründen werden keine medizinischen Pflegedienste
     (SGB V) oder Behandlungspflege erbracht."
 contact:

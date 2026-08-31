@@ -35,7 +35,7 @@
 
   <main>
     <section class="intro prose">
-      {{ intro | safe }}
+      <p>{{ intro }}</p>
     </section>
 
     <section class="services" id="leistungen">
@@ -56,7 +56,7 @@
     {% if billing_box %}
     <section class="billing-box">
       <h3><span aria-hidden="true">✨</span> {{ billing_box.box_title }}</h3>
-      <div class="prose">{{ billing_box.body | safe }}</div>
+      <div class="prose"><p>{{ billing_box.body | markdownInline | safe }}</p></div>
       {% if billing_box.note %}<p class="billing-note">{{ billing_box.note }}</p>{% endif %}
     </section>
     {% endif %}

@@ -12,7 +12,7 @@ content:
       - { name: brand, label: Firmenname, type: string }
       - { name: tagline, label: Slogan, type: string }
       - { name: subtitle, label: Untertitel, type: string }
-      - { name: intro, label: Einleitungstext, type: rich-text }
+      - { name: intro, label: Einleitungstext, type: text }
       - name: service_categories
         label: Leistungskategorien
         type: object
